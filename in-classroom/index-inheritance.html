@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class GameCharacter {
+        constructor(type, x, y) {
+          this.type = type;
+          this.x = x;
+          this.y = y;
+          this.life = undefined;
+        }
+
+        move(x, y) {
+          this.x = x;
+          this.y = y;
+          console.log("moving to ", this.x, this.y);
+        }
+
+        receiveHit(hitStrength) {
+          this.life -= hitStrength;
+
+          console.log(`my remaining life is ${this.life}`);
+
+          if (this.life < 0) {
+            this.die();
+          }
+        }
+
+        die() {
+          console.log("i am death! argggggg!");
+        }
+      }
+
+      class HumanSoldier extends GameCharacter {
+        constructor(type, x, y) {
+          super(type, x, y);
+          this.weaponType = "double curved";
+          this.life = 100;
+        }
+      }
+
+      class OrcSoldier extends GameCharacter {
+        constructor(type, x, y) {
+          super(type, x, y);
+          this.weaponType = "axe";
+          this.life = 120;
+        }
+      }
+
+      // let's build your army!!
+      let player1Soldiers = Array(50)
+        .fill()
+        .map(
+          () =>
+            new OrcSoldier(
+              "green",
+              Math.round(Math.random() * 1000),
+              Math.round(Math.random() * 1000)
+            )
+        );
+      console.log(player1Soldiers);
+
+      // filter out those soldier who are death
+      //   player1Soldiers = player1Soldiers.filter(soldier => soldier.life > 0)
+    </script>
+  </body>
+</html>

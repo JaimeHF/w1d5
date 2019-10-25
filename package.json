@@ -1,0 +1,23 @@
+{
+  "name": "w1d5-objects-inheritance-dom",
+  "version": "1.0.0",
+  "description": "![alt text](https://github.com/webmad1019-1/day3_advanced-selectors-positioning-full-layout/blob/master/img/logo2.png?raw \"\")",
+  "main": "Value_vs_Reference_and_Mutable_Data_Types.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmad1019-1/w1d5-objects-inheritance-dom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webmad1019-1/w1d5-objects-inheritance-dom/issues"
+  },
+  "homepage": "https://github.com/webmad1019-1/w1d5-objects-inheritance-dom#readme",
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
+}
