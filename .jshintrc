@@ -1,1 +1,1 @@
-{ "esversion": 6, "curly": true, "-W069": false, "eqeqeq": true }
+{ "esversion": 6, "curly": true, "-W069": false, "eqeqeq": true, "doublequotes": true }
