@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      body {
+        /* background: red; */
+        /* background: url("https://i.ytimg.com/vi/2y7rV-QajoQ/maxresdefault.jpg"); */
+        background-size: contain;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        /* align-content: center; */
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        /* border: 1px solid black; */
+        border-radius: 50%;
+        transition: all 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+      }
+
+      div:hover {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const randomInt = (min, max) =>
+        Math.floor(Math.random() * (max - min + 1) + min);
+      let divDOMEl;
+
+      Array(180)
+        .fill()
+        .forEach((val, idx) => {
+          divDOMEl = document.createElement("div");
+          divDOMEl.style.width = divDOMEl.style.height = `20px`;
+          divDOMEl.style.backgroundColor = `rgba(${randomInt(
+            0,
+            255
+          )}, ${randomInt(0, 255)}, ${randomInt(0, 255)}, ${Math.random()})`;
+          divDOMEl.style.width = divDOMEl.style.height = `${randomInt(
+            3 * 3,
+            18 * 3
+          )}px`;
+          divDOMEl.style.left = `${window.innerWidth / 2 +
+            400 * Math.cos((idx * 2 * Math.PI) / 180)}px`;
+          divDOMEl.style.top = `${window.innerHeight / 2 +
+            400 * Math.sin((idx * 2 * Math.PI) / 180)}px`;
+
+          divDOMEl.onclick = function() {
+            alert(`I am item number ${idx}`);
+          };
+
+          document.body.appendChild(divDOMEl);
+        });
+    </script>
+  </body>
+</html>
